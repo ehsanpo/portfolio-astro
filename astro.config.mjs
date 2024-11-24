@@ -4,7 +4,7 @@ import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 
 export default defineConfig({
-  site: "https://portfolio-astro.github.io",
+  site: "https://ehsanpo.github.io/portfolio-astro/",
   base: "portfolio-astro",
   integrations: [tailwind(), react(), mdx()],
   markdown: {
