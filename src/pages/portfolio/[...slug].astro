@@ -1,0 +1,107 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { imageLoader } from "../../components/imageLoader";
+
+export async function getStaticPaths() {
+  const portfolioEntries = await getCollection("portfolio");
+  console.log("portfolioEntries", portfolioEntries);
+
+  console.log(
+    portfolioEntries.map((entry) => ({
+      params: { slug: entry.data.permalink },
+      props: { entry },
+    }))
+  );
+
+  return portfolioEntries.map((entry) => ({
+    params: { slug: entry.data.permalink },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={`${entry.data.title} - Portfolio`}>
+  <article class="container mx-auto px-4 py-20">
+    <div class="max-w-4xl mx-auto">
+      <header class="mb-12">
+        <h1
+          class="text-6xl font-basement bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-gradient mb-6"
+        >
+          {entry.data.title}
+        </h1>
+        <div class="flex items-center gap-4 mb-8">
+          <img
+            src={imageLoader(entry.data.permalink, entry.data.logo[0])}
+            alt={`${entry.data.title} logo`}
+            class="w-16 h-16 rounded-full"
+          />
+
+          <div>
+            <p class="text-xl text-primary">{entry.data.tagline}</p>
+            <p class="text-gray-300">{entry.data.port_date}</p>
+          </div>
+        </div>
+        <img
+          src={imageLoader(
+            entry.data.permalink,
+            entry.data.background_image[0]
+          )}
+          alt={entry.data.title}
+          class="w-full aspect-video object-cover rounded-lg"
+        />
+      </header>
+
+      <div class="flex flex-wrap gap-3 mb-3">
+        <h3>Role</h3>
+        {
+          entry.data.category.map((cat) => (
+            <span class="px-3 py-1  bg-primary/20 rounded-full text-primary text-sm">
+              {cat}
+            </span>
+          ))
+        }
+      </div>
+
+      <div class="flex flex-wrap gap-3 mb-3">
+        <h3>Tech</h3>
+        {
+          entry.data.tag.map((cat) => (
+            <span class="px-3 py-1  bg-secondary/15 rounded-full text-secondary text-sm">
+              {cat}
+            </span>
+          ))
+        }
+      </div>
+
+      <div class="flex flex-wrap gap-3 mb-8">
+        <h3>Agancy</h3>
+        <span
+          class="px-3 py-1 bg-tertiary/20 rounded-full text-tertiary text-sm"
+          >{entry.data.agancy}</span
+        >
+      </div>
+
+      <div class="prose prose-invert max-w-none">
+        <Content />
+      </div>
+
+      {
+        entry.data.bilder && (
+          <div class="mt-12 grid md:grid-cols-2 gap-8">
+            {entry.data.bilder.map((img: string) => (
+              <img
+                src={imageLoader(entry.data.permalink, img)}
+                alt={`${entry.data.title} screenshot`}
+                class="rounded-lg"
+              />
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </article>
+</Layout>

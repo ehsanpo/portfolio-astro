@@ -1,0 +1,70 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Developer Portfolio" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body class="bg-light dark:bg-dark text-dark dark:text-light font-inter">
+    <Header />
+    <main class="min-h-screen pt-20">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  @font-face {
+    font-family: "Basement";
+    src: url("/fonts/basement.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "InterVariable";
+    src: url("/fonts/InterVariable.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --blur-bg: rgba(255, 255, 255, 0.8);
+  }
+
+  .dark {
+    --blur-bg: rgba(18, 18, 18, 0.8);
+  }
+  .bg-color-3 {
+    background-image: linear-gradient(220deg, #040c1b, #c5003c);
+  }
+  .bg-color-2 {
+    background-image: linear-gradient(90deg, #c5003c, #f59740);
+    color: #fff;
+  }
+
+  .blur-header {
+    backdrop-filter: blur(12px);
+    background: var(--blur-bg);
+  }
+</style>

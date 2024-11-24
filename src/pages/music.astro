@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SpotifyEmbed from '../components/SpotifyEmbed';
+
+const playlists = [
+  {
+    id: '37i9dQZF1DX5trt9i14X7j',
+    title: 'Coding Focus'
+  },
+  {
+    id: '37i9dQZF1DX7K31D69s4M1',
+    title: 'Creative Flow'
+  },
+  {
+    id: '37i9dQZF1DWWQRwui0ExPn',
+    title: 'Lo-Fi Beats'
+  }
+];
+---
+
+<Layout title="Music - Developer Portfolio">
+  <div class="container mx-auto px-4 py-20">
+    <h1 class="text-6xl font-basement bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-gradient mb-12">
+      Music
+    </h1>
+    <p class="text-xl text-gray-300 mb-12 max-w-2xl">
+      Music is an essential part of my creative process. Here are some of my favorite playlists that keep me in the zone while coding.
+    </p>
+    <div class="grid md:grid-cols-2 gap-8">
+      {playlists.map(playlist => (
+        <SpotifyEmbed {...playlist} client:visible />
+      ))}
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,29 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PortfolioCard from "../../components/PortfolioCard";
+import { getCollection } from "astro:content";
+
+const portfolioEntries = await getCollection("portfolio");
+const sortedPortfolioEntries = portfolioEntries.sort(
+  (a, b) =>
+    new Date(b.data.port_date[0]).getTime() -
+    new Date(a.data.port_date[0]).getTime()
+);
+---
+
+<Layout title="Portfolio - Developer Portfolio">
+  <div class="container mx-auto px-4 py-20">
+    <h1
+      class="text-6xl font-basement bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-gradient mb-12"
+    >
+      Portfolio
+    </h1>
+    <div class="grid md:grid-cols-2 gap-8">
+      {
+        portfolioEntries.map((entry) => (
+          <PortfolioCard {...entry.data} client:visible />
+        ))
+      }
+    </div>
+  </div>
+</Layout>
