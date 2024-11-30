@@ -28,13 +28,13 @@ client:
 tagline:
   - ""
 background_image:
-  - "home.jpg"
+  - "map.png"
 logo:
   - "triwa.png"
 video:
   - ""
 bilder:
-  - "map.png"
+  - "home.jpg"
 port_date:
   - "2017"
 

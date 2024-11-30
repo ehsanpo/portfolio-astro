@@ -23,7 +23,7 @@ client:
 tagline:
   - ""
 background_image:
-  - "noxo.jpg"
+  - "noxo.png"
 logo:
   - "noxo.png"
 video:
