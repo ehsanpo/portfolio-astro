@@ -1,27 +1,17 @@
 ---
 import { Image } from "astro:assets";
 
-const { src, width, height } = Astro.props;
+const { src, width, height, alt, className } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "../content/portfolio/**/*.{jpeg,jpg,png,gif,webp}"
 );
-
-console.log(images);
-console.log("src", src);
-console.log(images[src]);
-
-// const optimizedImage = await getImage({
-//   src: images[src]?.(),
-//   format: "webp",
-//   width: width, // resize optional
-//   height: height, // resize optional
-// });
-
-// console.log(test, "test");
-
-// console.log("test", test);
 ---
 
-<div>
-  <Image src={images[src]()} alt="" height={height} width={width} />
-</div>
+<Image
+  class={className}
+  src={images[src]()}
+  alt={alt}
+  height={height}
+  width={width}
+/>
+;

@@ -7,51 +7,63 @@ import { chart_data, stacks_data, cert_data, tools_data } from "../data";
 ---
 
 <Layout title="Skills - Developer Portfolio">
-  <div class="container mx-auto px-4 py-20">
+  <div class="px-4 py-20">
     <!-- Overall Skills Chart -->
-    <section class="mb-20">
-      <h1
-        class="text-6xl font-basement bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-gradient mb-12"
-      >
-        Skills & Expertise
-      </h1>
-      <div class="bg-dark/50 backdrop-blur-lg rounded-lg p-8">
-        <SkillChart data={chart_data[0]} client:load />
+    <section class="pb-10 md:pb-20">
+      <div class="container mx-auto">
+        <h1
+          class="text-6xl font-basement bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-gradient mb-12"
+        >
+          Skills & Expertise
+        </h1>
+        <div class="bg-dark/50 backdrop-blur-lg rounded-lg p-8">
+          <SkillChart data={chart_data[0]} client:load />
+        </div>
       </div>
     </section>
 
     <!-- Tech Stacks -->
-    <section class="mb-20">
-      <h2 class="text-4xl font-basement mb-12">Tech Stacks</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {stacks_data.map((stack) => <StackCard {...stack} client:visible />)}
+    <section class="bg-color-1 py-10 md:py-20">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-basement mb-12">Tech Stacks</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {
+            stacks_data.map((stack, index) => (
+              <StackCard {...stack} client:visible parentIndex={index} />
+            ))
+          }
+        </div>
       </div>
     </section>
 
-    <section class="mb-20">
-      <h2 class="text-4xl font-basement mb-12">Development Tools</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {tools_data.map((tool) => <ToolCard {...tool} client:visible />)}
+    <section class="py-10 md:py-20">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-basement mb-12">Development Tools</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {tools_data.map((tool) => <ToolCard {...tool} client:visible />)}
+        </div>
       </div>
     </section>
 
     <!-- Certifications -->
-    <section>
-      <h2 class="text-4xl font-basement mb-12">Certifications</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        {
-          cert_data.map((cert) => (
-            <div class="bg-dark/50 backdrop-blur-lg rounded-lg p-6">
-              <img
-                src={"/img/cert/" + cert.img}
-                alt={cert.name}
-                class="w-full object-fill rounded-lg mb-4"
-              />
-              <h3 class="text-xl font-basement">{cert.name}</h3>
-              <p class="text-primary mt-2">{cert.year}</p>
-            </div>
-          ))
-        }
+    <section class="py-10 md:py-20 bg-color-3">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-basement mb-12">Certifications</h2>
+        <div class="grid md:grid-cols-4 gap-8">
+          {
+            cert_data.map((cert) => (
+              <div class="bg-dark/50 backdrop-blur-lg rounded-lg p-6">
+                <img
+                  src={"img/cert/" + cert.img}
+                  alt={cert.name}
+                  class="w-full object-fill rounded-lg mb-4"
+                />
+                <h3 class="text-xl font-basement">{cert.name}</h3>
+                <p class="text-primary mt-2">{cert.year}</p>
+              </div>
+            ))
+          }
+        </div>
       </div>
     </section>
   </div>

@@ -24,7 +24,7 @@ const allCategories = [
       Portfolio
     </h1>
     <PortfolioFilter categories={allCategories} category="all" client:load />
-    <div class="grid md:grid-cols-2 gap-8">
+    <div class="grid md:grid-cols-3 gap-8">
       {sortedPortfolioEntries.map((entry) => <PortfolioCard {...entry.data} />)}
     </div>
   </div>

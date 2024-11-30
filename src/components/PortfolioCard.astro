@@ -25,11 +25,22 @@ const {
 } = Astro.props as PortfolioCardProps;
 
 const ImagePath = `../content/portfolio/${permalink}/${background_image}`;
+
+const delay = [
+  "",
+  "delay-75",
+  "delay-150",
+  "delay-200",
+  "delay-300",
+  "delay-500",
+  "delay-500",
+  "delay-500",
+];
 ---
 
 <motion.a
   href={`portfolio/${permalink}`}
-  className="group block relative overflow-hidden rounded-lg group"
+  className="group block relative overflow-hidden clip group"
   whileHover={{ scale: 1.02 }}
   data-categories={JSON.stringify(category)}
 >
@@ -40,7 +51,7 @@ const ImagePath = `../content/portfolio/${permalink}/${background_image}`;
     alt={title}
     width={800}
     height={400}
-    class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-500"
+    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
   />
   <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
     <div class="flex items-center gap-4 mb-4">
@@ -49,12 +60,22 @@ const ImagePath = `../content/portfolio/${permalink}/${background_image}`;
         <p class="text-primary">{tagline}</p>
       </div>
     </div>
-    <div class="group-hover:flex flex-wrap gap-2 mt-4 hidden">
+    <div class="flex flex-wrap gap-2 mt-4 overflow-hidden">
       {
-        category.map((cat) => (
+        category.map((cat, index) => (
           <span
-            key={cat}
-            class="px-3 py-1 bg-primary/20 rounded-full text-primary text-sm"
+            class={`overflow-hidden px-3 py-1 bg-primary/20 rounded-full text-primary text-sm group-hover:visible group-hover:h-7 invisible h-0  transition-all ${delay[index]}`}
+          >
+            {cat}
+          </span>
+        ))
+      }
+    </div>
+    <div class="flex flex-wrap gap-2 mt-4 overflow-hidden">
+      {
+        tag.map((cat, index) => (
+          <span
+            class={`overflow-hidden px-3 py-1 bg-secondary/20 rounded-full text-secondary text-sm group-hover:visible group-hover:h-7 invisible h-0  transition-all ${delay[index]} `}
           >
             {cat}
           </span>

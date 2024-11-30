@@ -6,6 +6,7 @@ interface StackCardProps {
   labels: string[];
   icon: string;
   data: string[];
+  parentIndex: number;
 }
 
 export default function StackCard({
@@ -13,10 +14,27 @@ export default function StackCard({
   labels,
   icon,
   data,
+  parentIndex,
 }: StackCardProps) {
+  const colors = [
+    "from-primary/50 to-primary",
+    "from-primary/50 to-primary",
+    "from-primary/50 to-primary",
+
+    "from-blue/50 to-blue ",
+    "from-blue/50 to-blue ",
+    "from-blue/50 to-blue ",
+
+    "from-blue/50 to-tertiary ",
+    "from-blue/50 to-tertiary ",
+    "from-blue/50 to-tertiary ",
+  ];
+
+  // bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-gradient
+  //bg-gradient-to-t ${colors[parentIndex]}
   return (
     <motion.div
-      className="bg-dark/50 backdrop-blur-lg rounded-lg p-6"
+      className={`bg-dark/50 backdrop-blur-lg rounded-lg px-6 pt-10 pb-6  clip `}
       whileHover={{ scale: 1.02 }}
     >
       <div className="flex items-center gap-4 mb-6">
@@ -32,10 +50,9 @@ export default function StackCard({
             </div>
             <div className="h-2 bg-dark/50 rounded-full overflow-hidden">
               <motion.div
-                className="h-full bg-primary"
+                className={`h-full bg-gradient-to-r ${colors[parentIndex]}`}
                 initial={{ width: 0 }}
                 whileInView={{ width: `${Number(data[index]) * 10}%` }}
-                viewport={{ once: true }}
               />
             </div>
           </div>

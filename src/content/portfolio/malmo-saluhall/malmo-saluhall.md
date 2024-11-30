@@ -43,9 +43,7 @@ port_date:
    <h3>The Agency's Perspective:</h3>
   <p>
     At Guts & Glory agency, we had the privilege of working on the Malmö Saluhall project. The task involved developing a new website to showcase the beauty and offerings of Malmö Saluhall. Our collaborative approach began with creating a strong brand identity and effectively communicating the upcoming launch through various PR initiatives. We also designed an informative web platform to keep the locals updated on the progress of the new saluhall.<br /><br />
-
     As the completion of Malmö Saluhall approached, we crafted a captivating website that matched the allure of the physical space and the exquisite food it housed. The visual identity of the website was carefully designed to capture the essence of Malmö Saluhall and entice visitors to explore its offerings. <br /><br />
-
     Our hard work and dedication paid off when Malmö Saluhall's digital identity, including the website, was recognized with the prestigious Svenska Designpriset in the highly competitive Digital Identity category in 2017.
 
   </p>

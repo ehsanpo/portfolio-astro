@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 interface TimelineItemProps {
   title: string;
@@ -8,9 +8,14 @@ interface TimelineItemProps {
   link?: string;
 }
 
-export default function TimelineItem({ title, description, date, link }: TimelineItemProps) {
+export default function TimelineItem({
+  title,
+  description,
+  date,
+  link,
+}: TimelineItemProps) {
   return (
-    <motion.div 
+    <motion.div
       className="relative pl-8 pb-8 border-l border-primary"
       initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
@@ -22,8 +27,8 @@ export default function TimelineItem({ title, description, date, link }: Timelin
         <h3 className="text-xl font-basement mt-2">{title}</h3>
         <p className="text-gray-300 mt-2">{description}</p>
         {link && (
-          <a 
-            href={link} 
+          <a
+            href={link}
             className="text-primary hover:text-white transition-colors mt-2 inline-block"
           >
             Learn more →

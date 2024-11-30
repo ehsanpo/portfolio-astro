@@ -10,9 +10,11 @@ export default {
       colors: {
         primary: "#91f209",
         secondary: "#c5003c",
-        tertiary: "#ffe009",
+        tertiary: "#fef900",
         dark: "#121212",
         light: "#ffffff",
+        blue: "#00f0ff",
+        orange: "#f59740",
       },
       animation: {
         gradient: "gradient 8s linear infinite",
