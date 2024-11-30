@@ -12,6 +12,7 @@ category:
   - Backend
   - Design
   - Front-end
+  - Sysadmin
 tag:
   - Web Development
   - Wordpress

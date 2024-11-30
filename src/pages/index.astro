@@ -5,21 +5,22 @@ import TestimonialCard from "../components/TestimonialCard";
 import StackCard from "../components/StackCard";
 import { getCollection } from "astro:content";
 import { stacks_data, awards_data, testimonial_data } from "../data";
+import Awards from "@/components/awards.astro";
 
 const portfolioEntries = await getCollection("portfolio");
 const latestPortfolioEntries = portfolioEntries
   .sort(
-    (a, b) =>
+    (a: any, b: any) =>
       new Date(b.data.port_date[0]).getTime() -
       new Date(a.data.port_date[0]).getTime()
   )
-  .filter((entry) => entry.data.onHome);
+  .filter((entry: any) => entry.data.onHome);
 ---
 
 <Layout title="Developer Portfolio">
-  <div class="container mx-auto px-4">
+  <div class="px-4">
     <!-- Hero Section -->
-    <section class="min-h-[80vh] flex items-center">
+    <section class="min-h-[80vh] flex items-center container mx-auto">
       <div class="max-w-4xl">
         <h1
           class="text-7xl font-basement leading-snug bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-gradient mb-8"
@@ -40,79 +41,69 @@ const latestPortfolioEntries = portfolioEntries
     </section>
 
     <!-- Selected Works -->
-    <section class="py-20">
-      <h2 class="text-4xl font-basement mb-12">Selected Works</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        {
-          latestPortfolioEntries.map((entry) => (
-            <PortfolioCard {...entry.data} />
-          ))
-        }
-      </div>
-      <div class="text-center mt-12">
-        <a
-          href="/portfolio"
-          class="inline-block text-primary hover:text-white transition-colors font-basement"
-        >
-          View All Projects →
-        </a>
+    <section class="py-20 bg-color-4">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-basement mb-12">Selected Works</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {
+            latestPortfolioEntries.map((entry) => (
+              <PortfolioCard {...entry.data} />
+            ))
+          }
+        </div>
+        <div class="text-center mt-12">
+          <a
+            href="/portfolio"
+            class="inline-block text-primary hover:text-white transition-colors font-basement"
+          >
+            View All Projects →
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- Tech Stacks -->
     <section class="py-20">
-      <h2 class="text-4xl font-basement mb-12">Tech Stack</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {
-          stacks_data
-            .slice(0, 3)
-            .map((stack, index) => (
-              <StackCard {...stack} parentIndex={index} client:visible />
-            ))
-        }
-      </div>
-      <div class="text-center mt-12">
-        <a
-          href="/skills"
-          class="inline-block text-primary hover:text-white transition-colors font-basement"
-        >
-          View All Skills →
-        </a>
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-basement mb-12">Stacks</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {
+            stacks_data
+              .slice(0, 3)
+              .map((stack, index) => (
+                <StackCard {...stack} parentIndex={index} client:visible />
+              ))
+          }
+        </div>
+        <div class="text-center mt-12">
+          <a
+            href="/skills"
+            class="inline-block text-primary hover:text-white transition-colors font-basement"
+          >
+            View All Skills →
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- Testimonials -->
-    <section class="py-20">
-      <h2 class="text-4xl font-basement mb-12">Client Testimonials</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        {
-          testimonial_data.map((testimonial) => (
-            <TestimonialCard {...testimonial} client:visible />
-          ))
-        }
+    <section class="py-20 bg-color-">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-basement mb-12">Testimonials</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          {
+            testimonial_data.map((testimonial) => (
+              <TestimonialCard {...testimonial} client:visible />
+            ))
+          }
+        </div>
       </div>
     </section>
-
     <!-- Awards -->
-    <section class="py-20">
-      <h2 class="text-4xl font-basement">Awards & Recognition</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        {
-          awards_data.map((award) => (
-            <a
-              href={award.link}
-              class="group bg-dark/50 backdrop-blur-lg rounded-lg p-6 transition-all hover:bg-dark/70 "
-            >
-              <img
-                src={award.images}
-                alt={award.name}
-                class="rounded-lg mb-4 group-hover:scale-105 transition-transform"
-              />
-              <h3 class="text-xl font-basement">{award.name}</h3>
-              <p class="text-gray-300 mt-2">{award.description}</p>
-            </a>
-          ))
-        }
+    <section class="py-10 md:py-20 bg-color-1">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-basement mb-12">Awards</h2>
+        <Awards />
       </div>
     </section>
   </div>

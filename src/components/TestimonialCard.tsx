@@ -20,7 +20,7 @@ export default function TestimonialCard({
 
   return (
     <motion.div
-      className="bg-dark/50 backdrop-blur-lg rounded-lg p-6 cursor-pointer"
+      className="bg-primary/10 backdrop-blur-lg rounded-lg px-6 pt-10 pb-6 cursor-pointer clip"
       whileHover={{ scale: 1.02 }}
       onClick={() => setIsExpanded(!isExpanded)}
     >

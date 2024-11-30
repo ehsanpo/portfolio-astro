@@ -34,7 +34,7 @@ const { title, description = "Developer Portfolio" } = Astro.props;
 <style is:global>
   @font-face {
     font-family: "Basement";
-    src: url("fonts/basement.woff2") format("woff2");
+    src: url("/portfolio-astro/fonts/basement.woff2") format("woff2");
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -42,7 +42,7 @@ const { title, description = "Developer Portfolio" } = Astro.props;
 
   @font-face {
     font-family: "InterVariable";
-    src: url("fonts/InterVariable.woff2") format("woff2");
+    src: url("/portfolio-astro/fonts/InterVariable.woff2") format("woff2");
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -63,15 +63,22 @@ const { title, description = "Developer Portfolio" } = Astro.props;
   .dark {
     --blur-bg: rgba(18, 18, 18, 0.8);
   }
-  .bg-color-3 {
-    background-image: linear-gradient(220deg, #040c1b, #c5003c);
+
+  .bg-color-1 {
+    background-image: linear-gradient(220deg, var(--p1), var(--p3));
   }
   .bg-color-2 {
     background-image: linear-gradient(90deg, #c5003c, #f59740);
     color: #fff;
   }
-  .bg-color-1 {
-    background-image: linear-gradient(220deg, var(--p1), var(--p3));
+  .bg-color-3 {
+    background-image: linear-gradient(220deg, #040c1b, #c5003c);
+  }
+  .bg-color-4 {
+    background-image: linear-gradient(180deg, rgb(18 18 18), rgb(0 0 0));
+  }
+  .bg-color-5 {
+    background-image: linear-gradient(180deg, rgb(0 0 0), rgb(18 18 18));
   }
 
   .blur-header {
