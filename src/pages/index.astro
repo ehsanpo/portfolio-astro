@@ -5,7 +5,7 @@ import TestimonialCard from "../components/TestimonialCard";
 import StackCard from "../components/StackCard";
 import { getCollection } from "astro:content";
 import { stacks_data, awards_data, testimonial_data } from "../data";
-import Awards from "@/components/awards.astro";
+import Awards from "../components/awards.astro";
 
 const portfolioEntries = await getCollection("portfolio");
 const latestPortfolioEntries = portfolioEntries
