@@ -416,3 +416,43 @@ export const experienceData = [
     date: "2011 - 2010",
   },
 ];
+
+export const tools_data = [
+  {
+    name: "Visual Studio Code",
+    icon: "/img/tools/vscode.svg",
+    description:
+      "Primary code editor with extensive customization and plugin support",
+    proficiency: 9,
+  },
+  {
+    name: "Docker",
+    icon: "/img/tools/docker.svg",
+    description: "Container platform for consistent development and deployment",
+    proficiency: 8,
+  },
+  {
+    name: "Git",
+    icon: "/img/tools/git.svg",
+    description: "Version control system for code management and collaboration",
+    proficiency: 9,
+  },
+  {
+    name: "Figma",
+    icon: "/img/tools/figma.svg",
+    description: "Design tool for UI/UX prototyping and collaboration",
+    proficiency: 8,
+  },
+  {
+    name: "Postman",
+    icon: "/img/tools/postman.svg",
+    description: "API development and testing platform",
+    proficiency: 9,
+  },
+  {
+    name: "Terminal",
+    icon: "/img/tools/terminal.svg",
+    description: "Command-line interface for system operations and development",
+    proficiency: 9,
+  },
+];

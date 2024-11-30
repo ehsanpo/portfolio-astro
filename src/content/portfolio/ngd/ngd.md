@@ -8,7 +8,8 @@ type: portfolio
 id: 208
 agancy: "Next Generation Design"
 category:
-  - Developer
+  - Front-End
+  - Backend
   - Designer
 tag:
   - Design

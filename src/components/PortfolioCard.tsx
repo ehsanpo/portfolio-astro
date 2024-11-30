@@ -28,6 +28,7 @@ export default function PortfolioCard({
       href={`portfolio/${permalink}`}
       className="group block relative overflow-hidden rounded-lg group"
       whileHover={{ scale: 1.02 }}
+      data-categories={JSON.stringify(category)}
     >
       <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent z-10" />
       <img
