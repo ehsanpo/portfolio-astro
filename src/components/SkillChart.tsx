@@ -86,9 +86,7 @@ export default function SkillChart({ data, chartData }: SkillChartProps) {
       setCurrentChart(chartData);
       return;
     }
-
     const chart = data.find((chart: any) => {
-      console.log("dd", chart, cat);
       return chart.slug === cat;
     });
     if (!chart) {

@@ -16,7 +16,6 @@ export default function PortfolioFilter({
   const filterPortfolio = (category: string) => {
     setSelectedCategory(category);
     const portfolioCards = document.querySelectorAll("[data-categories]");
-    // console.log("portfolioCards", portfolioCards);
 
     portfolioCards.forEach((card) => {
       const categories = JSON.parse(
