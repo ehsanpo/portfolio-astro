@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import PortfolioCard from "../../components/PortfolioCard";
 import { getCollection } from "astro:content";
+import PortfolioFilter from "@/components/PortfolioFilter";
 
 const portfolioEntries = await getCollection("portfolio");
 const sortedPortfolioEntries = portfolioEntries.sort(
@@ -9,6 +10,10 @@ const sortedPortfolioEntries = portfolioEntries.sort(
     new Date(b.data.port_date[0]).getTime() -
     new Date(a.data.port_date[0]).getTime()
 );
+
+const allCategories = [
+  ...new Set(portfolioEntries.flatMap((entry) => entry.data.category)),
+];
 ---
 
 <Layout title="Portfolio - Developer Portfolio">
@@ -18,9 +23,15 @@ const sortedPortfolioEntries = portfolioEntries.sort(
     >
       Portfolio
     </h1>
+    <PortfolioFilter
+      categories={allCategories}
+      selectedCategory="all"
+      onCategoryChange={() => {}}
+      client:load
+    />
     <div class="grid md:grid-cols-2 gap-8">
       {
-        portfolioEntries.map((entry) => (
+        sortedPortfolioEntries.map((entry) => (
           <PortfolioCard {...entry.data} client:visible />
         ))
       }
