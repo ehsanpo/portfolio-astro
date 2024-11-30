@@ -5,7 +5,7 @@ import mdx from "@astrojs/mdx";
 
 export default defineConfig({
   site: "https://ehsanpo.github.io",
-  base: "portfolio-astro",
+  // base: "",
   integrations: [tailwind(), react(), mdx()],
   markdown: {
     shikiConfig: {
