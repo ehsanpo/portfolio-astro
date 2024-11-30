@@ -2,7 +2,7 @@
 title: Bättretillvaro.se
 date: "2019-03-28T13:09:28+00:00"
 status: publish
-permalink: /battretillvaro-se
+permalink: battretillvaro
 author: Ehsan
 type: portfolio
 id: 347

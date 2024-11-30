@@ -4,15 +4,19 @@ import clsx from "clsx";
 
 interface PortfolioFilterProps {
   categories: string[];
+  category: string;
 }
 
-export default function PortfolioFilter({ categories }: PortfolioFilterProps) {
-  const [selectedCategory, setSelectedCategory] = useState("all");
+export default function PortfolioFilter({
+  categories,
+  category,
+}: PortfolioFilterProps) {
+  const [selectedCategory, setSelectedCategory] = useState(category);
 
   const filterPortfolio = (category: string) => {
     setSelectedCategory(category);
     const portfolioCards = document.querySelectorAll("[data-categories]");
-    console.log("portfolioCards", portfolioCards);
+    // console.log("portfolioCards", portfolioCards);
 
     portfolioCards.forEach((card) => {
       const categories = JSON.parse(

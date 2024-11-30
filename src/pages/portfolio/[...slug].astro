@@ -5,14 +5,6 @@ import { imageLoader } from "../../components/imageLoader";
 
 export async function getStaticPaths() {
   const portfolioEntries = await getCollection("portfolio");
-  console.log("portfolioEntries", portfolioEntries);
-
-  console.log(
-    portfolioEntries.map((entry) => ({
-      params: { slug: entry.data.permalink },
-      props: { entry },
-    }))
-  );
 
   return portfolioEntries.map((entry) => ({
     params: { slug: entry.data.permalink },

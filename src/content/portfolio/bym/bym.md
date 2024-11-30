@@ -2,7 +2,7 @@
 title: "Be you Music"
 date: "2019-03-28T12:40:01+00:00"
 status: publish
-permalink: bym
+permalink: "bym"
 author: Ehsan
 type: portfolio
 id: 311
