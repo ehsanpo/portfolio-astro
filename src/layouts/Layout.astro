@@ -51,6 +51,7 @@ const { title, description = "Developer Portfolio" } = Astro.props;
 
   :root {
     --blur-bg: rgba(255, 255, 255, 0.8);
+    --primary: #91f209;
     --p1: #2d3342;
     --p2: #565c6d;
     --p3: #040c1b;
@@ -94,6 +95,15 @@ const { title, description = "Developer Portfolio" } = Astro.props;
     @apply !leading-normal;
   }
 
+  .clip2 {
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - 8px),
+      calc(100% - 8px) 100%,
+      0 100%
+    );
+  }
   .clip {
     clip-path: polygon(
       0 0,

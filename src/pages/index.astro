@@ -7,6 +7,7 @@ import { getCollection } from "astro:content";
 import { stacks_data, awards_data, testimonial_data } from "../data";
 import Awards from "../components/Awards.astro";
 import logo from "../../public/img/logo.svg?raw";
+import { imageLoader } from "@/components/imageLoader";
 
 const portfolioEntries = await getCollection("portfolio");
 const latestPortfolioEntries = portfolioEntries
@@ -19,6 +20,13 @@ const latestPortfolioEntries = portfolioEntries
 ---
 
 <Layout title="Developer Portfolio">
+  <div class="ab fixed -z-10 inset-0">
+    <img
+      src="/img/112.png"
+      alt={"logo"}
+      class="w-full aspect-video object-cover rounded-lg opacity-30"
+    />
+  </div>
   <div class="px-4">
     <section class="min-h-[80vh] flex items-center container mx-auto">
       <div class="max-w-4xl flex">
@@ -91,7 +99,7 @@ const latestPortfolioEntries = portfolioEntries
     </section>
 
     <!-- Testimonials -->
-    <section class="py-20 bg-color-">
+    <section class="py-20 bg-dark">
       <div class="container mx-auto">
         <h2 class="text-4xl font-basement mb-12">Testimonials</h2>
         <div class="grid md:grid-cols-2 gap-8">
@@ -104,7 +112,7 @@ const latestPortfolioEntries = portfolioEntries
       </div>
     </section>
     <!-- Awards -->
-    <section class="py-10 md:py-20 bg-color-1">
+    <section class="py-10 md:py-20 bg-dark">
       <div class="container mx-auto">
         <h2 class="text-4xl font-basement mb-12">Awards</h2>
         <Awards />

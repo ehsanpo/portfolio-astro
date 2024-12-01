@@ -1,5 +1,5 @@
 ---
-onHome: true
+onHome: false
 title: "Telenor"
 date: "2019-03-19T09:44:30+00:00"
 status: publish
