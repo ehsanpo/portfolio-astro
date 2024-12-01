@@ -8,6 +8,7 @@ import { stacks_data, awards_data, testimonial_data } from "../data";
 import Awards from "../components/Awards.astro";
 import logo from "../../public/img/logo.svg?raw";
 import { imageLoader } from "@/components/imageLoader";
+import Particles from "@/components/ui/particles";
 
 const portfolioEntries = await getCollection("portfolio");
 const latestPortfolioEntries = portfolioEntries

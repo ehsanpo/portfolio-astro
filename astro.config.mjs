@@ -6,7 +6,7 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   site: "https://ehsanpo.github.io",
   // base: "",
-  integrations: [tailwind(), react(), mdx()],
+  integrations: [tailwind({ applyBaseStyles: false }), react(), mdx()],
   markdown: {
     shikiConfig: {
       theme: "dracula",
