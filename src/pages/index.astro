@@ -6,6 +6,7 @@ import StackCard from "../components/StackCard";
 import { getCollection } from "astro:content";
 import { stacks_data, awards_data, testimonial_data } from "../data";
 import Awards from "../components/Awards.astro";
+import logo from "../../public/img/logo.svg?raw";
 
 const portfolioEntries = await getCollection("portfolio");
 const latestPortfolioEntries = portfolioEntries
@@ -19,24 +20,27 @@ const latestPortfolioEntries = portfolioEntries
 
 <Layout title="Developer Portfolio">
   <div class="px-4">
-    <!-- Hero Section -->
     <section class="min-h-[80vh] flex items-center container mx-auto">
-      <div class="max-w-4xl">
-        <h1
-          class="text-7xl font-basement leading-snug bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-gradient mb-8"
-        >
-          Full-Stack Developer & Designer
-        </h1>
-        <p class="text-2xl text-gray-300 mb-12 max-w-2xl">
-          Crafting digital experiences with modern web technologies and creative
-          design solutions.
-        </p>
-        <a
-          href="/portfolio"
-          class="inline-block bg-primary text-dark font-basement px-8 py-4 rounded-lg hover:bg-white transition-colors"
-        >
-          View Portfolio
-        </a>
+      <div class="max-w-4xl flex">
+        <div>
+          <h1
+            class="text-7xl font-basement leading-snug bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-gradient mb-8"
+          >
+            Full-Stack Developer & Designer
+          </h1>
+          <p class="text-2xl text-gray-300 mb-12 max-w-2xl">
+            Crafting digital experiences with modern web technologies and
+            creative design solutions.
+          </p>
+          <a
+            href="/portfolio"
+            class="inline-block bg-primary text-dark font-basement px-8 py-4 rounded-lg hover:bg-white transition-colors"
+          >
+            View Portfolio
+          </a>
+        </div>
+
+        <!-- <Fragment set:html={logo} /> -->
       </div>
     </section>
 

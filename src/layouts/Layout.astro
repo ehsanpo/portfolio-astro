@@ -27,6 +27,7 @@ const { title, description = "Developer Portfolio" } = Astro.props;
     <main class="min-h-screen pt-20">
       <slot />
     </main>
+
     <Footer />
   </body>
 </html>
@@ -81,9 +82,16 @@ const { title, description = "Developer Portfolio" } = Astro.props;
     background-image: linear-gradient(180deg, rgb(0 0 0), rgb(18 18 18));
   }
 
+  .rellax.l_logo {
+    min-width: 64px;
+  }
   .blur-header {
     backdrop-filter: blur(12px);
     background: var(--blur-bg);
+  }
+
+  h1 {
+    @apply !leading-normal;
   }
 
   .clip {
