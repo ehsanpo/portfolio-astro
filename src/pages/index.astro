@@ -7,8 +7,7 @@ import { getCollection } from "astro:content";
 import { stacks_data, awards_data, testimonial_data } from "../data";
 import Awards from "../components/Awards.astro";
 import logo from "../../public/img/logo.svg?raw";
-import { imageLoader } from "@/components/imageLoader";
-import Particles from "@/components/ui/particles";
+import HyperText from "@/components/ui/hyper-text";
 
 const portfolioEntries = await getCollection("portfolio");
 const latestPortfolioEntries = portfolioEntries
@@ -23,7 +22,7 @@ const latestPortfolioEntries = portfolioEntries
 <Layout title="Developer Portfolio">
   <div class="ab fixed -z-10 inset-0">
     <img
-      src="/img/112.png"
+      src="/img/113.png"
       alt={"logo"}
       class="w-full aspect-video object-cover rounded-lg opacity-30"
     />
