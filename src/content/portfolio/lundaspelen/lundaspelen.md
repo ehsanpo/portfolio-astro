@@ -9,7 +9,7 @@ id: 205
 agancy: Guts & Glory
 category:
   - Backend
-  - Front-End
+  - Front-end
 tag:
   - CSS
   - HTML

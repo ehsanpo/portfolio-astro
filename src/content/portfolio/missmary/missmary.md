@@ -8,7 +8,7 @@ type: portfolio
 id: 205
 agancy: Whitespace
 category:
-  - Front-End
+  - Front-end
 tag:
   - CSS
   - HTML
