@@ -1,21 +1,25 @@
 ---
-import { Image } from "astro:assets";
+import { Picture } from "astro-imagetools/components";
 
-const { src, width, height, alt, className } = Astro.props;
+const { src, width, height, alt, className, layout } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "../content/portfolio/**/*.{jpeg,jpg,png,gif,webp}"
 );
-if (!images[src]) {
-  console.log(src);
-  throw new Error(`Image not found: ${src}`);
-}
+console.log(src);
+// if (!images[src]) {
+//   console.log(src);
+//   throw new Error(`Image not found: ${src}`);
+// }
 ---
 
-<Image
-  class={className}
-  src={images[src]()}
-  alt={alt}
-  height={height}
-  width={width}
-/>
-;
+<div class={className}>
+  <Picture
+    src={src}
+    alt={alt}
+    height={height}
+    width={width}
+    placeholder="tracedSVG"
+    layout={layout}
+    objectFit="contain"
+  />
+</div>

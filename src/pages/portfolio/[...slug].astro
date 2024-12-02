@@ -2,6 +2,8 @@
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import { imageLoader } from "../../components/imageLoader";
+import { Lightbox } from "@/components/Lightbox";
+import AstroImage from "@/components/AstroImage.astro";
 
 export async function getStaticPaths() {
   const portfolioEntries = await getCollection("portfolio");
@@ -14,6 +16,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+const ImagePath = `/src/content/portfolio/${entry.data.permalink}/${entry.data.background_image}`;
 ---
 
 <Layout title={`${entry.data.title} - Portfolio`}>
@@ -22,6 +25,7 @@ const { Content } = await entry.render();
       <header class="mb-12">
         <div class="max-w-61xl mx-auto">
           <h1
+            transition:name={`portfolio-header-${entry.data.permalink}`}
             class="text-6xl font-basement bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-gradient mb-6"
           >
             {entry.data.title}
@@ -34,7 +38,12 @@ const { Content } = await entry.render();
             />
 
             <div>
-              <p class="text-xl text-primary">{entry.data.tagline}</p>
+              <p
+                class="text-xl text-primary"
+                transition:name={`portfolio-tagline-${entry.data.permalink}`}
+              >
+                {entry.data.tagline}
+              </p>
               <p class="text-gray-300">{entry.data.port_date}</p>
             </div>
             {
@@ -54,22 +63,28 @@ const { Content } = await entry.render();
           </div>
         </div>
 
-        <img
-          src={imageLoader(
-            entry.data.permalink,
-            entry.data.background_image[0]
-          )}
-          alt={entry.data.title}
-          class="w-full aspect-video object-cover rounded-lg"
-        />
+        <div transition:name={`portfolio-image-${entry.data.permalink}`}>
+          <AstroImage
+            src={ImagePath}
+            alt={entry.data.title}
+            className="min-w-full w-full rounded-lg"
+            width={1200}
+            height={400}
+            layout="fullWidth"
+          />
+        </div>
+
         <div class="mt-8">
           <div class="flex mb-8 gap-5">
             <div class="flex flex-col gap-3 w-1/3">
               <h3 class="font-basement text-primary">Role</h3>
               <div>
                 {
-                  entry.data.category.map((cat) => (
-                    <span class="mr-3 mb-3 inline-block px-3 py-1 bg-primary/20 text-primary text-sm clip2 border-l-2 border-primary/30 hover:border-primary transition-all">
+                  entry.data.category.map((cat, index) => (
+                    <span
+                      transition:name={`portfolio-role-${entry.data.permalink}-${index}-${cat}`}
+                      class="mr-3 mb-3 inline-block px-3 py-1 bg-primary/20 text-primary text-sm clip2 border-l-2 border-primary/30 hover:border-primary transition-all"
+                    >
                       {cat}
                     </span>
                   ))
@@ -81,8 +96,11 @@ const { Content } = await entry.render();
               <h3 class="font-basement text-purple-500">Tech</h3>
               <div>
                 {
-                  entry.data.tag.map((cat) => (
-                    <span class="mr-3 mb-3 inline-block px-3 py-1 bg-purple-500/15 text-purple-500 text-sm clip2 border-l-2 border-purple-500/30  hover:border-secondary transition-all">
+                  entry.data.tag.map((cat, index) => (
+                    <span
+                      transition:name={`portfolio-tag-${entry.data.permalink}-${index}-${cat}`}
+                      class="mr-3 mb-3 inline-block px-3 py-1 bg-purple-500/15 text-purple-500 text-sm clip2 border-l-2 border-purple-500/30  hover:border-purple-500 transition-all"
+                    >
                       {cat}
                     </span>
                   ))
@@ -116,10 +134,9 @@ const { Content } = await entry.render();
           entry.data.bilder && (
             <div class="mt-12 grid md:grid-cols-2 gap-8">
               {entry.data.bilder.map((img: string) => (
-                <img
+                <Lightbox
                   src={imageLoader(entry.data.permalink, img)}
-                  alt={`${entry.data.title} screenshot`}
-                  class="rounded-lg"
+                  client:load
                 />
               ))}
             </div>

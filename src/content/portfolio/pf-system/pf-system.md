@@ -28,7 +28,7 @@ client:
 tagline:
   - "System Solutions"
 background_image:
-  - "enviroment.webp"
+  - "enviroment.jpg"
 logo:
   - "pfsystem.png"
 video:

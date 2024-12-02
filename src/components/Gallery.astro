@@ -1,0 +1,12 @@
+---
+import { Lightbox } from "./Lightbox";
+---
+
+<div class="gallery grid grid-cols-3 gap-4 p-4">
+  <!-- Images for the gallery -->
+  {
+    ["/image1.jpg", "/image2.jpg", "/image3.jpg"].map((src, index) => (
+      <Lightbox src={src} />
+    ))
+  }
+</div>

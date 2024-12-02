@@ -1,6 +1,7 @@
 ---
 import { motion } from "framer-motion";
 import AstroImage from "./AstroImage.astro";
+import { slide } from "astro:transitions";
 
 interface PortfolioCardProps {
   title: string;
@@ -24,17 +25,15 @@ const {
   tag,
 } = Astro.props as PortfolioCardProps;
 
-const ImagePath = `../content/portfolio/${permalink}/${background_image}`;
+const ImagePath = `/src/content/portfolio/${permalink}/${background_image}`;
 
 const delay = [
   "",
   "delay-75",
+  "delay-100",
   "delay-150",
   "delay-200",
   "delay-300",
-  "delay-500",
-  "delay-500",
-  "delay-500",
 ];
 ---
 
@@ -46,36 +45,51 @@ const delay = [
 >
   <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent z-10">
   </div>
-  <AstroImage
-    src={ImagePath}
-    alt={title}
-    width={800}
-    height={400}
-    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-  />
+  <div transition:name={`portfolio-image-${permalink}`}>
+    <AstroImage
+      src={ImagePath}
+      alt={title}
+      width={600}
+      height={400}
+      transition:name={`portfolio-image-${permalink}`}
+      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+    />
+  </div>
   <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
     <div class="flex items-center gap-4 mb-4">
       <div>
-        <h3 class="text-2xl font-basement text-white">{title}</h3>
-        <p class="text-primary">{tagline}</p>
+        <h3
+          class="text-2xl font-basement text-white"
+          transition:name={`portfolio-header-${permalink}`}
+        >
+          {title}
+        </h3>
+        <p
+          class="text-primary"
+          transition:name={`portfolio-tagline-${permalink}`}
+        >
+          {tagline}
+        </p>
       </div>
     </div>
-    <div class="flex flex-wrap gap-2 mt-4 overflow-hidden">
+    <div class="flex flex-wrap gap-2 group-hover:mt-4 overflow-hidden">
       {
         category.map((cat, index) => (
           <span
-            class={`overflow-hidden px-3 py-1 bg-primary/20 rounded-full text-primary text-sm group-hover:visible group-hover:h-7 invisible h-0  transition-all ${delay[index]}`}
+            transition:name={`portfolio-role-${permalink}-${index}-${cat}`}
+            class={`overflow-hidden px-3 group-hover:py-1 bg-primary/20  text-primary text-sm group-hover:visible group-hover:h-7 invisible h-0  ease-in-out transition-all ${delay[index]}`}
           >
             {cat}
           </span>
         ))
       }
     </div>
-    <div class="flex flex-wrap gap-2 mt-4 overflow-hidden">
+    <div class="flex flex-wrap gap-2 group-hover:mt-4 overflow-hidden">
       {
-        tag.map((cat, index) => (
+        tag.slice(0, 3).map((cat, index) => (
           <span
-            class={`overflow-hidden px-3 py-1 bg-secondary/20 rounded-full text-secondary text-sm group-hover:visible group-hover:h-7 invisible h-0  transition-all ${delay[index]} `}
+            transition:name={`portfolio-tag-${permalink}-${index}-${cat}`}
+            class={`overflow-hidden px-3 group-hover:py-1 bg-purple-500/15 text-purple-500 text-sm group-hover:visible group-hover:h-7 invisible h-0 clip2 border-l-2 border-purple-500/30  hover:border-purple-500 transition-all ${delay[index]} `}
           >
             {cat}
           </span>

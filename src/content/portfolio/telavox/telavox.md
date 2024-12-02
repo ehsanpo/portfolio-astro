@@ -22,6 +22,7 @@ logo:
   - "telavox-logo.png"
 bilder:
   - "telavox-app.png"
+  - "tvx-app.png"
 
 tagline:
   - "Telephony. The right way."
@@ -39,17 +40,12 @@ client:
 
 <p>At Telavox, I work as a Fullstack Developer with a focus on front-end development. Our team is dedicated to building an Electron and web application for our softphone product, ensuring it meets the highest standards of performance and user experience.</p>
 
-<br />
-
 <h3>Project: Visual Refresh and RTL Support</h3>
-<br />
 
 <p>The primary goal of this project was to update the design of our application with a modern, sleek interface and to introduce Right-to-Left (RTL) support for the Arabic language. This involved a complete rewrite of the aspplication in TypeScript, as well as addressing technical debt by migrating from MUI4 to Tailwind CSS.</p>
 
-<br />
-
 <h3>Key Responsibilities:</h3>
-<br />
+
 <ul>
     <li>Collaborated closely with a multidisciplinary team of developers and UX designers.</li>
     <li>Guided the UX team to ensure component designs were practical and implementable.</li>
@@ -58,9 +54,8 @@ client:
     <li>Implemented RTL support to make the application accessible to Arabic-speaking users.</li>
 </ul>
 
-<br />
 <h3>Achievements:</h3>
-<br />
+
 <ul>
     <li>Successfully delivered a modernized application interface that improved user satisfaction and engagement.</li>
     <li>Enhanced the application's maintainability and scalability by leveraging TypeScript and Tailwind CSS.</li>
