@@ -1,17 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
+import BoxReveal from "@/components/ui/box-reveal";
 
 interface ToolCardProps {
   name: string;
   icon: string;
   description: string;
   proficiency: number;
+  index: number;
 }
 
 export default function ToolCard({
   name,
   icon,
   description,
+  index,
   proficiency,
 }: ToolCardProps) {
   return (
@@ -20,24 +23,28 @@ export default function ToolCard({
       whileHover={{ scale: 1.02 }}
     >
       <div className="flex items-center gap-4 mb-4">
-        <img src={icon} alt={name} className="w-12 h-12" />
-        <h3 className="text-xl font-basement">{name}</h3>
+        <BoxReveal
+          boxColor="bg-purple-500"
+          duration={0.5}
+          delay={(index % 3) * 0.2}
+        >
+          <img src={icon} alt={name} className="w-12 h-12" />
+        </BoxReveal>
+        <BoxReveal
+          boxColor="bg-purple-500"
+          duration={0.5}
+          delay={(index % 3) * 0.2}
+        >
+          <h3 className="text-xl font-basement">{name}</h3>
+        </BoxReveal>
       </div>
-      <p className="text-gray-300 mb-4">{description}</p>
-      {/* <div className="relative">
-        <div className="flex justify-between mb-1">
-          <span className="text-gray-300">Proficiency</span>
-          <span className="text-primary">{proficiency}/10</span>
-        </div>
-        <div className="h-2 bg-dark/50 rounded-full overflow-hidden">
-          <motion.div
-            className="h-full bg-primary"
-            initial={{ width: 0 }}
-            whileInView={{ width: `${proficiency * 10}%` }}
-            viewport={{ once: true }}
-          />
-        </div>
-      </div> */}
+      <BoxReveal
+        boxColor="bg-purple-500"
+        duration={0.5}
+        delay={(index % 3) * 0.2}
+      >
+        <p className="text-gray-300 mb-4">{description}</p>
+      </BoxReveal>
     </motion.div>
   );
 }

@@ -5,7 +5,6 @@ const { src, width, height, alt, className, layout } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "../content/portfolio/**/*.{jpeg,jpg,png,gif,webp}"
 );
-console.log(src);
 // if (!images[src]) {
 //   console.log(src);
 //   throw new Error(`Image not found: ${src}`);

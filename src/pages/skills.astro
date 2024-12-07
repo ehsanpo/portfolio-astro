@@ -4,6 +4,7 @@ import SkillChart from "../components/SkillChart";
 import StackCard from "../components/StackCard";
 import ToolCard from "../components/ToolCard";
 import { chart_data, stacks_data, cert_data, tools_data } from "../data";
+import BoxReveal from "@/components/ui/box-reveal";
 ---
 
 <Layout title="Skills - Developer Portfolio">
@@ -44,7 +45,11 @@ import { chart_data, stacks_data, cert_data, tools_data } from "../data";
       <div class="container mx-auto">
         <h2 class="text-4xl font-basement mb-12">Development Tools</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {tools_data.map((tool) => <ToolCard {...tool} client:visible />)}
+          {
+            tools_data.map((tool, index) => {
+              return <ToolCard {...tool} client:visible index={index} />;
+            })
+          }
         </div>
       </div>
     </section>
@@ -55,16 +60,24 @@ import { chart_data, stacks_data, cert_data, tools_data } from "../data";
         <h2 class="text-4xl font-basement mb-12">Certifications</h2>
         <div class="grid md:grid-cols-4 gap-8">
           {
-            cert_data.map((cert) => (
-              <div class="bg-dark/50 backdrop-blur-lg rounded-lg p-6">
-                <img
-                  src={"img/cert/" + cert.img}
-                  alt={cert.name}
-                  class="w-full object-fill rounded-lg mb-4"
-                />
-                <h3 class="text-xl font-basement">{cert.name}</h3>
-                <p class="text-primary mt-2">{cert.year}</p>
-              </div>
+            cert_data.map((cert, index) => (
+              // for each 4n certification make delay to be mroe
+              <BoxReveal
+                boxColor="bg-primary"
+                duration={0.5}
+                delay={(index % 4) * 0.2}
+                client:idle
+              >
+                <div class="bg-dark/50 backdrop-blur-lg rounded-lg p-6">
+                  <img
+                    src={"img/cert/" + cert.img}
+                    alt={cert.name}
+                    class="w-full object-fill rounded-lg mb-4"
+                  />
+                  <h3 class="text-xl font-basement">{cert.name}</h3>
+                  <p class="text-primary mt-2">{cert.year}</p>
+                </div>
+              </BoxReveal>
             ))
           }
         </div>
@@ -72,8 +85,3 @@ import { chart_data, stacks_data, cert_data, tools_data } from "../data";
     </section>
   </div>
 </Layout>
-<script is:inline>
-  // Will be rendered into the HTML exactly as written!
-  // Local imports are not resolved and will not work.
-  // If in a component, repeats each time the component is used.
-</script>

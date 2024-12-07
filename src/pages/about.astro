@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import TimelineItem from "../components/TimelineItem";
 import { educationData, experienceData, awards_data } from "../data";
 import Awards from "../components/Awards.astro";
+import BoxReveal from "@/components/ui/box-reveal";
 ---
 
 <Layout title="About Me - Developer Portfolio">
@@ -11,27 +12,42 @@ import Awards from "../components/Awards.astro";
     <section class="mb-20">
       <div class="container mx-auto">
         <h1
-          class="text-6xl font-basement bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-gradient mb-8"
+          class="text-6xl font-basement bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent animate-gradient mb-8"
         >
           About Me
         </h1>
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <p class="text-2xl text-gray-300 mb-6">
-              I'm a passionate full-stack developer with a keen eye for design
-              and a drive for creating exceptional digital experiences.
-            </p>
-            <p class="text-gray-300 text-xl">
-              With years of experience in web development and design, I combine
-              technical expertise with creative problem-solving to deliver
-              innovative solutions.
-            </p>
+            <BoxReveal
+              boxColor="bg-purple-500"
+              duration={0.5}
+              delay={0.2}
+              client:idle
+            >
+              <p class="text-2xl text-gray-300 mb-6">
+                I'm a passionate full-stack developer with a keen eye for design
+                and a drive for creating exceptional digital experiences.
+              </p>
+            </BoxReveal>
+            <BoxReveal
+              boxColor="bg-primary"
+              duration={0.5}
+              delay={0.2}
+              client:idle
+            >
+              <p class="text-gray-300 text-xl">
+                With years of experience in web development and design, I
+                combine technical expertise with creative problem-solving to
+                deliver innovative solutions.
+              </p>
+            </BoxReveal>
           </div>
           <div class="relative">
             <div
-              class="absolute inset-0 bg-gradient-to-r from-primary/80 to-secondary/80 rounded-lg transform rotate-3 animate-gradient"
+              class="absolute inset-0 bg-gradient-to-r from-primary/80 to-purple-500/80 rounded-lg transform rotate-3 animate-gradient"
             >
             </div>
+
             <img
               src="img/118.jpg"
               alt="Profile"
@@ -73,7 +89,9 @@ import Awards from "../components/Awards.astro";
         <h2
           class="md:w-1/2 font-basement text-2xl md:text-3xl lg:text-6xl mb-6 md:mb-0"
         >
-          Background
+          <BoxReveal boxColor="bg-primary" duration={0.5} client:idle>
+            Background
+          </BoxReveal>
         </h2>
         <div class="md:w-1/2">
           My journey as a self-taught professional has equipped me with a
@@ -102,7 +120,9 @@ import Awards from "../components/Awards.astro";
         <h2
           class="md:w-1/2 font-basement text-2xl md:text-3xl lg:text-6xl mb-6 md:mb-0"
         >
-          Philosophy
+          <BoxReveal boxColor="bg-purple-500" duration={0.5} client:idle
+            >Philosophy
+          </BoxReveal>
         </h2>
         <div class="md:w-1/2">
           <div>
@@ -166,7 +186,9 @@ import Awards from "../components/Awards.astro";
         <h2
           class="md:w-1/2 font-basement text-2xl md:text-3xl lg:text-6xl mb-6 md:mb-0"
         >
-          Motivators
+          <BoxReveal boxColor="bg-primary" duration={0.5} client:idle
+            >Motivators
+          </BoxReveal>
         </h2>
         <div class="md:w-1/2 text-base leading-relaxed">
           <div>

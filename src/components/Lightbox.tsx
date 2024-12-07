@@ -10,7 +10,6 @@ export const Lightbox: React.FC<LightboxProps> = ({ src }) => {
   const cleanSrc = src.replace(/\//g, "-").replace(/\s+/g, "").slice(0, -4);
 
   const openLightbox = () => {
-    console.log("click");
     document.startViewTransition(() => {
       setIsOpen(true);
     });

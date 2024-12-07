@@ -105,7 +105,7 @@ export default function SkillChart({ data, chartData }: SkillChartProps) {
           Overall
         </button>
         <button
-          className="inline-block bg-secondary/70 text-dark font-basement px-8 py-4 rounded-lg hover:bg-white transition-colors"
+          className="inline-block bg-purple-400 text-dark font-basement px-8 py-4 rounded-lg hover:bg-white transition-colors"
           onClick={() => onSkillChartLoad("Front-end")}
         >
           Front-end
@@ -141,13 +141,13 @@ export default function SkillChart({ data, chartData }: SkillChartProps) {
           DevOps
         </button>
         <button
-          className="inline-block bg-blue/90 text-dark font-basement px-8 py-4 rounded-lg hover:bg-white transition-colors"
+          className="inline-block bg-teal-500 text-dark font-basement px-8 py-4 rounded-lg hover:bg-white transition-colors"
           onClick={() => onSkillChartLoad("Apps")}
         >
           Apps
         </button>
         <button
-          className="inline-block bg-primary/70 text-dark font-basement px-8 py-4 rounded-lg hover:bg-white transition-colors"
+          className="inline-block bg-fuchsia-400 text-dark font-basement px-8 py-4 rounded-lg hover:bg-white transition-colors"
           onClick={() => onSkillChartLoad("Music")}
         >
           Music
