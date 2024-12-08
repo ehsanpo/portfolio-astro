@@ -84,7 +84,8 @@ const { title, description = "Developer Portfolio" } = Astro.props;
   }
 
   .rellax.l_logo {
-    min-width: 64px;
+    min-width: 36px;
+    margin-top: -16px;
   }
   .blur-header {
     backdrop-filter: blur(12px);
@@ -118,6 +119,18 @@ const { title, description = "Developer Portfolio" } = Astro.props;
       calc(40% + 8px) calc(100% - 8px),
       40% 100%,
       0 100%
+    );
+  }
+  .clip3 {
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - 16px),
+      calc(65% + 16px) calc(100% - 16px),
+      65% 100%,
+      35% 100%,
+      calc(35% - 16px) calc(100% - 16px),
+      0 calc(100% - 16px)
     );
   }
 </style>

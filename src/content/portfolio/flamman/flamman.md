@@ -13,10 +13,10 @@ category:
   - Design
   - Front-end
   - Sysadmin
+  - UX
 tag:
   - Web Development
   - Wordpress
-  - UX
   - Support
 
 case_link_url:

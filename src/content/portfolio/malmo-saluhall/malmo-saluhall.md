@@ -27,11 +27,11 @@ client:
 tagline:
   - "Ett himmelrike för matälskare"
 background_image:
-  - Malmo Saluhall-bg.jpg
+  - malmo-saluhall-bg.jpg
 logo:
-  - Malmo Saluhall-top.png
+  - malmo-saluhall-top.png
 bilder:
-  - "Malmo Saluhall1.jpg"
+  - "malmosaluhall1.jpg"
 port_date:
   - "2017"
 ---

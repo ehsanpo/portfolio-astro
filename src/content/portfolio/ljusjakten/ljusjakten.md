@@ -10,6 +10,7 @@ agancy: Guts & Glory
 category:
   - Backend
   - Mobile
+  - UX
 tag:
   - HTML
   - "HTML5 Geolocation"

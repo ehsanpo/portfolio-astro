@@ -63,12 +63,12 @@ import BoxReveal from "@/components/ui/box-reveal";
             cert_data.map((cert, index) => (
               // for each 4n certification make delay to be mroe
               <BoxReveal
-                boxColor="bg-primary"
+                boxColor="bg-primary h-full"
                 duration={0.5}
                 delay={(index % 4) * 0.2}
                 client:idle
               >
-                <div class="bg-dark/50 backdrop-blur-lg rounded-lg p-6">
+                <div class="bg-dark/50 backdrop-blur-lg rounded-lg p-6 h-full">
                   <img
                     src={"img/cert/" + cert.img}
                     alt={cert.name}

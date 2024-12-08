@@ -148,7 +148,7 @@ const uniqueClients = [...new Set(clients)];
     <!-- Awards -->
     <section class="py-10 md:py-20 bg-dark">
       <div class="container mx-auto">
-        <h2 class="text-4xl font-basement mb-12 text-secondary text-center">
+        <h2 class="text-4xl font-basement mb-12 text-yellow-400 text-center">
           Awards
         </h2>
         <Awards />
@@ -161,7 +161,11 @@ const uniqueClients = [...new Set(clients)];
           Clients
         </h2>
         <Marquee pauseOnHover className="[--duration:90s]" client:load>
-          {uniqueClients.map((client) => <div>{client}</div>)}
+          {
+            uniqueClients.map((client) => (
+              <div class="p-3 bg-secondary rounded-md">{client}</div>
+            ))
+          }
         </Marquee>
       </div>
     </section>

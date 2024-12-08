@@ -10,6 +10,7 @@ agancy: Guts & Glory
 category:
   - Backend
   - Front-end
+  - UX
 tag:
   - Wordpress
   - HTML

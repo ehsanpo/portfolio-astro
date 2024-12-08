@@ -86,10 +86,10 @@ const delay = [
     </div>
     <div class="flex flex-wrap gap-2 group-hover:mt-4 overflow-hidden">
       {
-        tag.slice(0, 3).map((cat, index) => (
+        tag.map((cat, index) => (
           <span
             transition:name={`portfolio-tag-${permalink}-${index}-${cat}`}
-            class={`overflow-hidden px-3 group-hover:py-1 bg-purple-500/15 text-purple-500 text-sm group-hover:visible group-hover:h-7 invisible h-0 clip2 border-l-2 border-purple-500/30  hover:border-purple-500 transition-all ${delay[index]} `}
+            class={`${index > 2 ? "hidden" : ""} overflow-hidden px-3 group-hover:py-1 bg-purple-500/15 text-purple-500 text-sm group-hover:visible group-hover:h-7 invisible h-0 clip2 border-l-2 border-purple-500/30  hover:border-purple-500 transition-all ${delay[index]} `}
           >
             {cat}
           </span>

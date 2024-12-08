@@ -11,11 +11,13 @@ category:
   - Backend
   - Front-end
   - Mobile
+  - UX
 tag:
   - Angular
   - CSS
   - HTML
   - Phonegap
+
 case_link_url:
   - "http://api.appelappen.nordiskamuseet.se"
 client:

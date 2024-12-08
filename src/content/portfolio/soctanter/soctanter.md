@@ -11,6 +11,7 @@ agancy: "Whitespace"
 category:
   - Backend
   - Front-end
+  - UX
 tag:
   - Drupal
   - PHP

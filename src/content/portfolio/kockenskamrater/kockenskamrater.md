@@ -12,6 +12,7 @@ case_link_url:
 category:
   - Front-end
   - UX
+  - Design
 tag:
   - CSS
   - HTML
