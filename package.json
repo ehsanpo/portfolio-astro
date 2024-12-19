@@ -8,7 +8,9 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy:prod": "npm run build && git branch -D prod || true && git checkout -b prod && cp -r dist/* ./ && cp CNAME ./ && git add -f . && git commit -m 'Deploy dist contents and CNAME to prod branch' && git push origin prod --force && git checkout -"
+
   },
   "dependencies": {
     "@astrojs/check": "^0.5.4",
