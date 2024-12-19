@@ -25,7 +25,7 @@ const uniqueClients = [...new Set(clients)];
 
 <Layout title="Developer Portfolio">
   <div class="px-4">
-    <div class="w-full z-0 absolute leading-snug">
+    <div class="w-[99%] z-0 absolute leading-snug">
       <FlickeringGrid
         className="z-0 relative inset-0 [mask-image:radial-gradient(450px_circle_at_center,white,transparent)]"
         squareSize={4}
@@ -60,7 +60,7 @@ const uniqueClients = [...new Set(clients)];
 
           <a
             href="/portfolio"
-            class="inline-block bg-primary text-dark font-basement px-8 py-4 rounded-lg hover:bg-white transition-colors"
+            class="shadow-2xl hover:shadow-primary inline-block bg-primary text-dark font-basement px-8 py-4 rounded-lg hover:bg-primary/90 hover:scale-105 duration-300 transition"
           >
             View Portfolio
           </a>
@@ -123,7 +123,7 @@ const uniqueClients = [...new Set(clients)];
     <!-- Testimonials -->
     <section class="py-20 bg-dark">
       <div class="container mx-auto">
-        <h2 class="text-4xl font-basement mb-12 text-primary text-center">
+        <h2 class="text-4xl font-basement mb-12 text-violet-500 text-center">
           Testimonials
         </h2>
         <div class="grid md:grid-cols-2 gap-8">
@@ -135,11 +135,11 @@ const uniqueClients = [...new Set(clients)];
         </div>
       </div>
     </section>
-    <!-- Awards -->
-    <section class="py-10 md:py-20 bg-dark">
+
+    <section class="py-10 md:py-20 bg-color-1">
       <div class="container mx-auto">
-        <h2 class="text-4xl font-basement mb-12 text-yellow-400 text-center">
-          Awards
+        <h2 class="text-4xl font-basement mb-12 text-center text-tertiary">
+          Awards & Recognition
         </h2>
         <Awards />
       </div>
@@ -147,13 +147,15 @@ const uniqueClients = [...new Set(clients)];
 
     <section class="py-10 md:py-20">
       <div class="container mx-auto">
-        <h2 class="text-4xl font-basement mb-12 text-secondary text-center">
+        <h2 class="text-4xl font-basement mb-12 text-indigo-600 text-center">
           Clients
         </h2>
         <Marquee pauseOnHover className="[--duration:90s]" client:load>
           {
             uniqueClients.map((client) => (
-              <div class="p-3 bg-secondary rounded-md">{client}</div>
+              <div class="p-3 bg-indigo-600 text-indigo-200  rounded-md">
+                {client}
+              </div>
             ))
           }
         </Marquee>

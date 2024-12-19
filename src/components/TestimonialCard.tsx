@@ -20,7 +20,7 @@ export default function TestimonialCard({
 
   return (
     <motion.div
-      className="bg-purple-900/20 backdrop-blur-lg rounded-lg px-6 pt-10 pb-6 cursor-pointer clip"
+      className="bg-violet-900/80  backdrop-blur-lg rounded-lg px-6 pt-10 pb-6 cursor-pointer clip"
       whileHover={{ scale: 1.02 }}
       onClick={() => setIsExpanded(!isExpanded)}
     >
@@ -40,7 +40,7 @@ export default function TestimonialCard({
         animate={{ height: isExpanded ? "auto" : "100px" }}
         className="overflow-hidden"
       >
-        <p className="text-gray-300">{isExpanded ? desc : short}</p>
+        <p className="text-violet-200">{isExpanded ? desc : short}</p>
       </motion.div>
       <button
         className="mt-4 text-primary hover:text-white transition-colors"

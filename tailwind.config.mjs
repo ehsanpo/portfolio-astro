@@ -14,7 +14,7 @@ export default {
         dark: "#121212",
         light: "#ffffff",
         blue: "#00f0ff",
-        orange: "#f59740",
+        orangeX: "#f59740",
       },
       animation: {
         gradient: "gradient 8s linear infinite",

@@ -5,13 +5,11 @@ import mdx from "@astrojs/mdx";
 import { astroImageTools } from "astro-imagetools";
 
 export default defineConfig({
-  site: "https://ehsanpo.github.io",
-  // base: "",
+  site: "https://ehsan-pourhadi.com",
   integrations: [
     tailwind({ applyBaseStyles: false }),
     react(),
     mdx(),
-
     astroImageTools,
   ],
   markdown: {
