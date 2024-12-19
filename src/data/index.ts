@@ -2,21 +2,21 @@ export const awards_data = [
   {
     name: "Svenska design",
     description: "Gold Category Digital Design",
-    images: "img/awards/svenskadesign.png",
+    images: "/img/awards/svenskadesign.png",
     link: "portfolio/malmo-saluhall",
   },
   {
     name: "Cannes lions",
     description:
       "Silver Lion in Promo & Activation, Bronze Lion in Cyber & Shortlist in Media",
-    images: "img/awards/cannen.png",
+    images: "/img/awards/cannen.png",
     link: "portfolio/toolpool",
   },
   {
     name: "Guldägget",
     description:
       "Gold Category PR & Silver Categories Digital and Alternative Media",
-    images: "img/awards/guldagg.png",
+    images: "/img/awards/guldagg.png",
     link: "portfolio/toolpool",
   },
 ];
@@ -213,49 +213,49 @@ export const stacks_data = [
   {
     slug: "Front-end",
     labels: ["React", "Gatsby", "Next.js", "TypeScript", "Sass"],
-    icon: "img/stacks/front-end.svg",
+    icon: "/img/stacks/front-end.svg",
     data: ["10", "10", "8", "7", "10"],
   },
   {
     slug: "Backend",
     labels: ["Node.js", "PHP", "Ruby on Rails", "Rest API", "GraphQL"],
-    icon: "img/stacks/back-end.svg",
+    icon: "/img/stacks/back-end.svg",
     data: ["10", "9", "7", "10", "10"],
   },
   {
     slug: "Database",
     labels: ["MySQL", "PostgreSQL", "MongoDB", "Redis", "Elasticsearch"],
-    icon: "img/stacks/database2.svg",
+    icon: "/img/stacks/database2.svg",
     data: ["10", "7", "8", "7", "6"],
   },
   {
     slug: "Design",
     labels: ["UI", "UX", "Adobe XD", "Photoshop", "Motion Graphics"],
-    icon: "img/stacks/design2.svg",
+    icon: "/img/stacks/design2.svg",
     data: ["10", "9", "8", "10", "8"],
   },
   {
     slug: "Cloud",
     labels: ["AWS API Gateway", "Lambda", "DynamoDB", "S3", "CloudFront"],
-    icon: "img/stacks/cloud.svg",
+    icon: "/img/stacks/cloud.svg",
     data: ["9", "7", "7", "8", "8"],
   },
   {
     slug: "DevOps",
     labels: ["Linux", "Docker", "Nginx", "Shell Script", "Github Actions"],
-    icon: "img/stacks/devop2.svg",
+    icon: "/img/stacks/devop2.svg",
     data: ["10", "9", "9", "10", "9"],
   },
   {
     slug: "Apps",
     labels: ["Electron js", "Typescript", "Tailwind", "Vite", "Reacte Native"],
-    icon: "img/stacks/apps.svg",
+    icon: "/img/stacks/apps.svg",
     data: ["7", "8", "8", "6", "8"],
   },
   {
     slug: "Music",
     labels: ["Reason Studios", "Bitwig", "Logic Pro", "BeatStep"],
-    icon: "img/stacks/music.svg",
+    icon: "/img/stacks/music.svg",
     data: ["10", "7", "10", "6"],
   },
 ];
@@ -420,38 +420,38 @@ export const experienceData = [
 export const tools_data = [
   {
     name: "Visual Studio Code",
-    icon: "img/tools/vscode.svg",
+    icon: "/img/tools/vscode.svg",
     description:
       "Primary code editor with extensive customization and plugin support",
     proficiency: 9,
   },
   {
     name: "Docker",
-    icon: "img/tools/docker.svg",
+    icon: "/img/tools/docker.svg",
     description: "Container platform for consistent development and deployment",
     proficiency: 8,
   },
   {
     name: "Git",
-    icon: "img/tools/git.svg",
+    icon: "/img/tools/git.svg",
     description: "Version control system for code management and collaboration",
     proficiency: 9,
   },
   {
     name: "Figma",
-    icon: "img/tools/figma.svg",
+    icon: "/img/tools/figma.svg",
     description: "Design tool for UI/UX prototyping and collaboration",
     proficiency: 8,
   },
   {
     name: "Postman",
-    icon: "img/tools/postman.svg",
+    icon: "/img/tools/postman.svg",
     description: "API development and testing platform",
     proficiency: 9,
   },
   {
     name: "Terminal",
-    icon: "img/tools/terminal.svg",
+    icon: "/img/tools/terminal.svg",
     description: "Command-line interface for system operations and development",
     proficiency: 9,
   },
