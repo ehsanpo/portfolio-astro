@@ -5,6 +5,7 @@ import StackCard from "../components/StackCard";
 import ToolCard from "../components/ToolCard";
 import { chart_data, stacks_data, cert_data, tools_data } from "../data";
 import BoxReveal from "@/components/ui/box-reveal";
+import RankTimeline from "@/components/RankTimeline";
 ---
 
 <Layout title="Skills - Developer Portfolio">
@@ -38,6 +39,13 @@ import BoxReveal from "@/components/ui/box-reveal";
             ))
           }
         </div>
+      </div>
+    </section>
+
+    <section class="py-10 md:py-20">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-basement mb-12">Tech Timeline</h2>
+        <RankTimeline />
       </div>
     </section>
 

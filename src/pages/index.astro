@@ -6,7 +6,6 @@ import StackCard from "../components/StackCard";
 import { getCollection } from "astro:content";
 import { stacks_data, awards_data, testimonial_data } from "../data";
 import Awards from "../components/Awards.astro";
-import logo from "../../public/img/logo.svg?raw";
 import Marquee from "@/components/ui/marquee";
 import HyperText from "@/components/ui/hyper-text";
 import FlickeringGrid from "@/components/ui/flickering-grid";
@@ -20,20 +19,11 @@ const latestPortfolioEntries = portfolioEntries
   )
   .filter((entry: any) => entry.data.onHome);
 
-// list of all clients in portfolio
 const clients = portfolioEntries.map((entry: any) => entry.data.client[0]);
-// removed dublicates from client
 const uniqueClients = [...new Set(clients)];
 ---
 
 <Layout title="Developer Portfolio">
-  <!-- <div class="ab fixed -z-10 inset-0">
-    <img
-      src="/img/113.png"
-      alt={"logo"}
-      class="w-full aspect-video object-cover rounded-lg opacity-30"
-    />
-  </div> -->
   <div class="px-4">
     <div class="w-full z-0 absolute leading-snug">
       <FlickeringGrid
