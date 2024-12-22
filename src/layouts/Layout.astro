@@ -137,7 +137,6 @@ const { title, description = "Developer Portfolio" } = Astro.props;
 <script>
   if (document.startViewTransition === undefined) {
     document.startViewTransition = (callback) => {
-      console.log("Transition started");
       callback();
     };
   }

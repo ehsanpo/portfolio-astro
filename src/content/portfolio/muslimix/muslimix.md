@@ -8,7 +8,7 @@ type: portfolio
 id: 209
 agancy: The Fan Club
 category:
-  - Designer
+  - Design
 tag:
   - UX
   - Design

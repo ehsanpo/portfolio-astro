@@ -10,7 +10,7 @@ agancy: "Next Generation Design"
 category:
   - Front-end
   - Backend
-  - Designer
+  - Design
   - Tech-Lead
 tag:
   - Design

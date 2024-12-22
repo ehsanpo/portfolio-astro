@@ -17,8 +17,6 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 const ImagePath = `/src/content/portfolio/${entry.data.permalink}/${entry.data.background_image}`;
-
-console.log(entry.data.bilder);
 ---
 
 <Layout title={`${entry.data.title} - Portfolio`}>
@@ -34,7 +32,7 @@ console.log(entry.data.bilder);
           </h1>
           <div class="flex items-center gap-4 mb-8">
             <img
-              src={imageLoader(entry.data.permalink, entry.data.logo[0])}
+              src={entry.data.logo[0].src}
               alt={`${entry.data.title} logo`}
               class="w-16"
             />
@@ -101,7 +99,7 @@ console.log(entry.data.bilder);
                   entry.data.tag.map((cat, index) => (
                     <span
                       transition:name={`portfolio-tag-${entry.data.permalink}-${index}-${cat}`}
-                      class="mr-3 mb-3 inline-block px-3 py-1 bg-purple-500/15 text-purple-500 text-sm clip2 border-l-2 border-purple-500/30  hover:border-purple-500 transition-all"
+                      class="mr-3 mb-3 inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-sm clip2 border-l-2 border-purple-500/30  hover:border-purple-500 transition-all"
                     >
                       {cat}
                     </span>

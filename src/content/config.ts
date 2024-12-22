@@ -18,7 +18,7 @@ const portfolio = defineCollection({
       client: z.array(z.string()),
       tagline: z.array(z.string()),
       background_image: z.array(z.string()),
-      logo: z.array(z.string()),
+      logo: z.array(image()),
       bilder: z.array(image()).optional(),
       port_date: z.array(z.string()),
       onHome: z.boolean().optional(),

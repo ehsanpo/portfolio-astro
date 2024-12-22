@@ -49,7 +49,7 @@ export const Lightbox: React.FC<LightboxProps> = ({ src }) => {
             <img
               src={src}
               alt="Fullscreen Image"
-              // className="max-h-[90vh] max-w-[90vw] rounded-md"
+              className="max-h-[90vh] max-w-[90vw] rounded-md"
             />
             <button
               className="absolute top-4 right-4 text-white text-xl"
