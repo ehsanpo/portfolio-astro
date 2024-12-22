@@ -17,6 +17,8 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 const ImagePath = `/src/content/portfolio/${entry.data.permalink}/${entry.data.background_image}`;
+
+console.log(entry.data.bilder);
 ---
 
 <Layout title={`${entry.data.title} - Portfolio`}>
@@ -133,12 +135,11 @@ const ImagePath = `/src/content/portfolio/${entry.data.permalink}/${entry.data.b
         {
           entry.data.bilder && (
             <div class="mt-12 grid md:grid-cols-2 gap-8">
-              {entry.data.bilder.map((img: string) => (
-                <Lightbox
-                  src={imageLoader(entry.data.permalink, img)}
-                  client:load
-                />
-              ))}
+              <Fragment>
+                {entry.data.bilder.map((img, index) => (
+                  <Lightbox src={img.src} client:load />
+                ))}
+              </Fragment>
             </div>
           )
         }
