@@ -183,7 +183,7 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
     <div ref={containerRef} className={`w-full h-full ${className}`}>
       <canvas
         ref={canvasRef}
-        className="pointer-events-none"
+        className="pointer-events-none max-w-full"
         style={{
           width: canvasSize.width,
           height: canvasSize.height,
