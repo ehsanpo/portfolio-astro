@@ -89,6 +89,12 @@ const calculateRowPositions = (items) => {
 
 const timelineData = [
   {
+    id: 100,
+    name: "Adobe Flash",
+    icon: "https://icon-widget.codersrank.io/api/flash",
+    duration: "2010-2012",
+  },
+  {
     id: 0,
     name: "Photoshop",
     icon: "https://icon-widget.codersrank.io/api/photoshop",
