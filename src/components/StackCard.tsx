@@ -36,7 +36,7 @@ export default function StackCard({
   return (
     <motion.div className={` rounded-lg  `} whileHover={{ scale: 1.02 }}>
       <MagicCard
-        className="bg-dark/50  px-6 pt-10 pb-6 clip backdrop-blur-lg cursor-pointer flex-col items-center justify-center shadow-2xl whitespace-nowrap "
+        className="bg-dark/50 px-6 pt-10 pb-6 clip backdrop-blur-lg cursor-pointer flex-col items-center justify-center1 shadow-2xl whitespace-nowrap rounded-2xl"
         gradientColor={"#000"}
       >
         <div className="flex items-center gap-4 mb-6">

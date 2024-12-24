@@ -9,6 +9,7 @@ import Awards from "../components/Awards.astro";
 import Marquee from "@/components/ui/marquee";
 import HyperText from "@/components/ui/hyper-text";
 import FlickeringGrid from "@/components/ui/flickering-grid";
+import SkillsInfo from "@/components/Skillsinfo";
 
 const portfolioEntries = await getCollection("portfolio");
 const latestPortfolioEntries = portfolioEntries
@@ -109,6 +110,7 @@ const uniqueClients = [...new Set(clients)];
               ))
           }
         </div>
+        <SkillsInfo />
         <div class="text-center mt-12">
           <a
             href="/skills"

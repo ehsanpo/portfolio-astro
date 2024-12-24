@@ -6,6 +6,8 @@ import ToolCard from "../components/ToolCard";
 import { chart_data, stacks_data, cert_data, tools_data } from "../data";
 import BoxReveal from "@/components/ui/box-reveal";
 import RankTimeline from "@/components/RankTimeline";
+import SkillsInfo from "@/components/Skillsinfo";
+import { MagicCard } from "@/components/ui/magic-card";
 ---
 
 <Layout title="Skills - Developer Portfolio">
@@ -29,7 +31,7 @@ import RankTimeline from "@/components/RankTimeline";
     </section>
 
     <!-- Tech Stacks -->
-    <section class="bg-color-1 py-10 md:py-20">
+    <section class="bg-color-1 py-10 md:py-20 p-4">
       <div class="container mx-auto">
         <h2 class="text-4xl font-basement mb-12">Tech Stacks</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -38,58 +40,86 @@ import RankTimeline from "@/components/RankTimeline";
               <StackCard {...stack} client:visible parentIndex={index} />
             ))
           }
+          <MagicCard
+            className="bg-dark/50 clip relative px-6 pt-10  rounded-2xl "
+            gradientColor={"#000"}
+          >
+            <ul class="space-y-2">
+              <h3 class="text-xl font-basement mb-10">
+                Skill Level Explanation:
+              </h3>
+              <li>
+                <span class="text-indigo-400 font-basement">1–3</span>: I’ve
+                experimented and built something basic for personal use.
+              </li>
+              <li>
+                <span class="text-indigo-400 font-basement">4–6</span>: I’ve
+                worked with it professionally and deployed it to production.
+              </li>
+              <li>
+                <span class="text-indigo-400 font-basement">7–9</span>: I have
+                several years of experience, regularly working with it in
+                production environments.
+              </li>
+              <li>
+                <span class="text-indigo-400 font-basement">10</span>: I’m
+                highly confident, capable of mentoring others, and comfortable
+                making architectural decisions.
+              </li>
+            </ul>
+          </MagicCard>
         </div>
       </div>
-    </section>
 
-    <section class="py-10 md:py-20">
-      <div class="container mx-auto">
-        <h2 class="text-4xl font-basement mb-12">Tech Timeline</h2>
-        <RankTimeline />
-      </div>
-    </section>
-
-    <section class="py-10 md:py-20">
-      <div class="container mx-auto">
-        <h2 class="text-4xl font-basement mb-12">Development Tools</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {
-            tools_data.map((tool, index) => {
-              return <ToolCard {...tool} client:visible index={index} />;
-            })
-          }
+      <section class="py-10 md:py-20">
+        <div class="container mx-auto">
+          <h2 class="text-4xl font-basement mb-12">Tech Timeline</h2>
+          <RankTimeline />
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Certifications -->
-    <section class="py-10 md:py-20 bg-color-3">
-      <div class="container mx-auto">
-        <h2 class="text-4xl font-basement mb-12">Certifications</h2>
-        <div class="grid md:grid-cols-4 gap-8">
-          {
-            cert_data.map((cert, index) => (
-              // for each 4n certification make delay to be mroe
-              <BoxReveal
-                boxColor="bg-primary h-full"
-                duration={0.5}
-                delay={(index % 4) * 0.2}
-                client:idle
-              >
-                <div class="bg-dark/50 backdrop-blur-lg rounded-lg p-6 h-full">
-                  <img
-                    src={"/img/cert/" + cert.img}
-                    alt={cert.name}
-                    class="w-full object-fill rounded-lg mb-4"
-                  />
-                  <h3 class="text-xl font-basement">{cert.name}</h3>
-                  <p class="text-primary mt-2">{cert.year}</p>
-                </div>
-              </BoxReveal>
-            ))
-          }
+      <section class="py-10 md:py-20">
+        <div class="container mx-auto">
+          <h2 class="text-4xl font-basement mb-12">Development Tools</h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {
+              tools_data.map((tool, index) => {
+                return <ToolCard {...tool} client:visible index={index} />;
+              })
+            }
+          </div>
         </div>
-      </div>
+      </section>
+
+      <!-- Certifications -->
+      <section class="py-10 md:py-20 bg-color-3">
+        <div class="container mx-auto">
+          <h2 class="text-4xl font-basement mb-12">Certifications</h2>
+          <div class="grid md:grid-cols-4 gap-8">
+            {
+              cert_data.map((cert, index) => (
+                // for each 4n certification make delay to be mroe
+                <BoxReveal
+                  boxColor="bg-primary h-full"
+                  duration={0.5}
+                  delay={(index % 4) * 0.2}
+                  client:idle
+                >
+                  <div class="bg-dark/50 backdrop-blur-lg rounded-lg p-6 h-full">
+                    <img
+                      src={"/img/cert/" + cert.img}
+                      alt={cert.name}
+                      class="w-full object-fill rounded-lg mb-4"
+                    />
+                    <h3 class="text-xl font-basement">{cert.name}</h3>
+                    <p class="text-primary mt-2">{cert.year}</p>
+                  </div>
+                </BoxReveal>
+              ))
+            }
+          </div>
+        </div>
+      </section>
     </section>
   </div>
 </Layout>
